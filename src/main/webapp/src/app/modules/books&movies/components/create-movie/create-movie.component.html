@@ -1,0 +1,38 @@
+<form class="movie-form" [formGroup]="movieForm" (ngSubmit)="save()">
+    <p class="form-title">Movie</p>
+    <p>
+        <label for="name">Name: </label>
+        <input formControlName="name" type="text" id="name">
+    </p>
+    <p>
+        <label for="country">Author: </label>
+        <input formControlName="country" type="text" id="country">
+    </p>
+    <p>
+        <label for="year">Year: </label>
+        <input formControlName="year" type="number" id="year">
+    </p>
+    <p>
+        <label for="budget">Budget:</label>
+        <input formControlName="budget" type="number" id="budget">
+    </p>
+    <p>
+        <label for="studio">Studio: </label>
+        <input formControlName="studio" type="text" id="studio">
+    </p>
+    <div class="sub-form">
+        <p class="form-title">Actors</p>
+        <p *ngFor="let actor of actors">
+            {{actor.name}}
+        </p>
+        <p>
+            <label for="name">Name: </label>
+            <button type="button" class="sub-action" (click)="addActor(actorInput.value); actorInput.value = ''">Add</button>
+            <input #actorInput type="text" id="name">
+        </p>
+    </div>
+    <div class="form-actions">
+        <button class="form-button" type="submit">Save</button>
+        <button class="form-button" type="reset" (click)="cancel()">Cancel</button>
+    </div>
+</form>

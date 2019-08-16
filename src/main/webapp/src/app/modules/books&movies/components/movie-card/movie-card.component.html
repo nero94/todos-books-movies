@@ -1,0 +1,12 @@
+<div class="card">
+    <p class="card-title">{{ movie.name }}</p>
+    <p><span>Year: </span>{{ movie.year }}</p>
+    <p><span>Country: </span>{{ movie.country }}</p>
+    <p><span>Studio: </span>{{ movie.studio }}</p>
+    <p><span>Actors:</span></p>
+    <p><span>{{ movie.actorsString }}</span></p>
+    <p class="actions">
+        <button [disabled]="movie.status === 'DONE'" (click)="markAsViewed()" >Mark As Read</button>
+        <button class="delete" (click)="deleteHandler()">Remove</button>
+    </p>
+</div>

@@ -1,0 +1,16 @@
+<div>
+    <div class="tool-bar">
+        <button [routerLink]="['create']" class="create-button">ADD NEW</button>
+        <span class="active-only">
+            <input class="checkbox" type="checkbox" id="filter" (change)="toogleShowActiveOnly($event)">
+            <label for="filter">SHOW ACTIVE ONLY</label>
+        </span>
+    </div>
+    <ng-container *ngFor="let item of data">
+        <app-book-card *ngIf="isBook(item);else movieTmpl" [book]="item" (delete)="deleteItem($event)"></app-book-card>
+        <ng-template #movieTmpl>
+            <app-movie-card [movie]="item" (delete)="deleteItem($event)"></app-movie-card>
+        </ng-template>
+    </ng-container>
+    <router-outlet></router-outlet>`
+</div>

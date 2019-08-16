@@ -1,0 +1,15 @@
+<form [formGroup]="todoForm" (ngSubmit)="updateHandler()">
+    <ng-container *ngIf="editMode;else readMode">
+        <input class="editor" type="text" [value]="todo.title" formControlName="title">
+        <span class="action" (click)="updateHandler()" title="Save Changes">&#10003;</span>
+        <span class="action" (click)="editMode = false" title="Cancel">&#10007;</span>
+    </ng-container>
+    <span class="action delete" (click)="deleteHandler(todo)" title="Delete">&#10006;</span>
+</form>
+
+<ng-template #readMode>
+    <span class="action" (click)="toggleStatus()" title="{{ isCompleted() ? 'Set As Active!' : 'Set As Done!' }}">
+        {{isCompleted() ? '&#9746;' : '&#9745;' }}</span>
+    <span class="title" [ngClass]="{done: isCompleted()}" title="{{ todo.title }}">{{ todo.title }}</span>
+    <span [hidden]="isCompleted()" class="action" (click)="editMode = true" title="Edit">&#9997;</span>
+</ng-template>

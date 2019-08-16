@@ -1,0 +1,27 @@
+.action {
+  padding: 12px 16px 12px 16px;
+  margin-left: 5px;
+  border-radius: 25px;
+  cursor: pointer;
+  &:hover {
+    color: #f0f8ff;
+  }
+
+  &.delete {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.title {
+  color: #fff;
+  &.done {
+    color: #a9a9a9;
+    text-decoration: line-through;
+  }
+}
+
+.editor {
+  margin-left: 52px;
+}

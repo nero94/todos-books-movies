@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    # PostgreSQL
+    url: jdbc:postgresql://localhost:5432/testapp
+    username: postgres
+    password: postgres
+    # default connection pool
+    hikari:
+      connectionTimeout: 20000
+      maximumPoolSize: 5
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        temp:
+          use_jdbc_metadata_defaults: false
+    hibernate:
+      ddl-auto: update

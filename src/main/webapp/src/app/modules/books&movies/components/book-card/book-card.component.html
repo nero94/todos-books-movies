@@ -1,0 +1,12 @@
+<div class="card">
+    <p class="card-title">{{ book.name }}</p>
+    <p><span>Author: </span>{{ book.author?.name }}</p>
+    <p><span>Release Year: </span>{{ book.releaseYear }}</p>
+    <p><span>Number Of Pages: </span>{{ book.pages }}</p>
+    <p><span>Publishing House:</span></p>
+    <p><span>{{ book.publishingHouseString }}</span></p>
+    <p class="actions">
+        <button [disabled]="book.status === 'DONE'" (click)="markAsRead()">Mark As Read</button>
+        <button class="delete" (click)="deleteHandler()">Remove</button>
+    </p>
+</div>

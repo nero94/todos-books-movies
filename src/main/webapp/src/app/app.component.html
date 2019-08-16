@@ -1,0 +1,13 @@
+<nav id="main-nav">
+    <ul>
+        <li>
+            <a [routerLink]="['todos']" routerLinkActive="active">TODO</a>
+        </li>
+        <li>
+            <a [routerLink]="['books-and-movies']" routerLinkActive="active">Books & Movies</a>
+        </li>
+    </ul>
+</nav>
+<main>
+    <router-outlet></router-outlet>
+</main>

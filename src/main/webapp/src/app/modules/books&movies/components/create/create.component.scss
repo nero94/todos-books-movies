@@ -1,0 +1,12 @@
+.routing {
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+  .router-link-active {
+    color: #f4a460;
+    font-size: 18px;
+  }
+}

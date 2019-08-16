@@ -1,0 +1,19 @@
+<div>
+  <div class="tool-bar">
+    <button (click)="isCreateMode = true;" class="create-button">CREATE NEW</button>
+    <span class="active-only">
+      <input class="checkbox" type="checkbox" id="filter" (change)="toogleShowActiveOnly($event)">
+      <label for="filter">SHOW ACTIVE ONLY</label>
+    </span>
+  </div>
+
+  <ul class="todo-list">
+    <li *ngIf="isCreateMode">
+      <app-todo [todo]="newTodo()" [editMode]="true" (delete)="deleteTodo($event)" (save)="saveOrCreateTodo($event)">
+      </app-todo>
+    </li>
+    <li *ngFor="let todo of todos">
+      <app-todo [todo]="todo" (delete)="deleteTodo($event)" (save)="saveOrCreateTodo($event)"></app-todo>
+    </li>
+  </ul>
+</div>

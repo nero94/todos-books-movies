@@ -1,0 +1,36 @@
+$nav-width: 200px;
+
+#main-nav {
+  height: 100%;
+  width: $nav-width;
+  float: left;
+  text-align: center;
+  background-color: #f0f8ff;
+  position: relative;
+  & > * {
+    justify-content: center;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+
+    li a {
+      display: block;
+      color: #000;
+      padding: 14px 0;
+      text-decoration: none;
+      &.active {
+        background-color: #4caf50;
+        color: white;
+      }
+    }
+  }
+}
+
+main {
+  width: calc(100% - #{$nav-width});
+  float: right;
+}

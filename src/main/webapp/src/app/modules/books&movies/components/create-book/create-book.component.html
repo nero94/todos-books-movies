@@ -1,0 +1,46 @@
+<form class="book-form" [formGroup]="bookForm" (ngSubmit)="save()">
+    <p class="form-title">Book</p>
+    <p>
+        <label for="name">Name: </label>
+        <input formControlName="name" type="text" id="name">
+    </p>
+    <p formGroupName="author">
+        <label for="author">Author: </label>
+        <input formControlName="name" type="text" id="author">
+    </p>
+    <p>
+        <label for="year">Year: </label>
+        <input formControlName="year" type="number" id="year">
+    </p>
+    <p>
+        <label for="pages">Number Of Pages:</label>
+        <input formControlName="pages" type="number" id="pages">
+    </p>
+    <div class="sub-form" formGroupName="publishingHouse">
+        <p class="form-title">Publishing House</p>
+        <p>
+            <label for="name">Name: </label>
+            <input formControlName="name" type="text" id="name">
+        </p>
+        <p>
+            <label for="year">Year Of Creation: </label>
+            <input formControlName="year" type="number" id="year">
+        </p>
+        <p>
+            <label for="country">Country: </label>
+            <input formControlName="country" type="text" id="country">
+        </p>
+        <p>
+            <label for="city">City: </label>
+            <input formControlName="city" type="text" id="city">
+        </p>
+        <p>
+            <label for="phone">Phone: </label>
+            <input formControlName="phone" type="text" id="phone">
+        </p>
+    </div>
+    <div class="form-actions">
+        <button class="form-button" type="submit">Save</button>
+        <button class="form-button" type="reset" (click)="cancel()">Cancel</button>
+    </div>
+</form>
